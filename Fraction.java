@@ -21,14 +21,13 @@ public class Fraction
     public Fraction add(Fraction f)
     {
         Fraction ans = new Fraction(this.num*f.denom+f.num*this.denom, this.denom*f.denom);
-        /*int gcd = GCD(ans.num, ans.denom);
-        ans.num/=gcd; ans.denom/=gcd;*/
         return ans;
     }
 
     public void reduce()
     {
-        
+        int gcd = GCD(this.num, this.denom);
+        this.num/=gcd; this.denom/=gcd;
     }
     
     private static int GCD(int a, int b)
